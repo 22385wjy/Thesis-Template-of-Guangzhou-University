@@ -1,0 +1,43 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[Lambin et~al.(2012)Lambin, Rios-Velazquez, Leijenaar, Carvalho,
+  Van~Stiphout, Granton, Zegers, Gillies, Boellard, Dekker,
+  et~al.]{lambin2012radiomics}
+Lambin P, Rios-Velazquez E, Leijenaar R, et~al.
+\newblock Radiomics: extracting more information from medical images using
+  advanced feature analysis\allowbreak[J].
+\newblock \emph{European Journal of Cancer}, 2012, 48\allowbreak (4): 441-446.
+
+\bibitem[Lo et~al.(2019)Lo, Hung, and Hsieh]{lo2019computer}
+Lo C~M, Hung P~H, Hsieh K~L~C.
+\newblock Computer-aided detection of hyperacute stroke based on relative
+  radiomic patterns in computed tomography\allowbreak[J].
+\newblock \emph{Applied Sciences}, 2019, 9\allowbreak (8): 1668.
+
+\bibitem[Wen et~al.(2023)Wen, Qin, Du, Fang, Wei, Chen, and
+  Li]{wen2023msgfusion}
+Wen J, Qin F, Du J, et~al.
+\newblock {MsgFusion}: Medical semantic guided two-branch network for
+  multimodal brain image fusion\allowbreak[J].
+\newblock \emph{IEEE Transactions on Multimedia}, 2023, 26: 944-957.
+
+\bibitem[Wen et~al.(May 2024, published online, DOI: 10.1109)Wen, Khan, Chen,
+  Peng, Li, and Chen]{wen2024tip}
+Wen J, Khan A, Chen A, et~al.
+\newblock High-Quality Fusion and Visualization for MR-PET Brain Tumor Images
+  via Multi-Dimensional Features\allowbreak[J].
+\newblock \emph{IEEE Transactions on Image Processing}, May 2024, published
+  online, DOI: 10.1109.
+
+\end{thebibliography}

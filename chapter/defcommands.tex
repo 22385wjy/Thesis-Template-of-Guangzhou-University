@@ -1,0 +1,55 @@
+% !TEX root = ../main.tex
+% 常用符号与自定义命令
+\def\ZZ{{\mathbb Z}}
+\def\NN{{\mathbb N}}
+\def\RR{{\mathbb R}}
+\def\CC{{\mathbb C}}
+\def\QQ{{\mathbb Q}}
+\def\EE{{\mathbb E}}
+\def\FF{{\mathbb F}}
+\def\Fp{\mathbb{F}_{p}}
+\def\Fq{\mathbb{F}_{q}}
+\def\Zp{\mathbb{Z}_{p}}
+\def\Zq{\mathbb{Z}_{q}}
+\def\Zk{\mathbb{Z}_{2^k}}
+\def\Zl{\mathbb{Z}_{2^\ell}}
+
+%\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}} % 打勾
+\newcommand{\xmark}{\ding{55}} % 打叉
+
+%% for algorithm
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}} % 上标引用
+
+% Protocol/Functionality
+\tcbuselibrary{skins,breakable}
+\newtcolorbox[auto counter,number within=chapter]{protocol}[2][]{%
+  enhanced,
+%  title        = {Protocol \thetcbcounter: {#2}},
+  title        = {Protocol {#2}},
+  attach boxed title to top left={xshift=+3mm,yshift*=-3mm},
+  colback      = black!5,
+  colframe     = black!35,
+  fonttitle    = \bfseries,
+  colbacktitle = black!15!white,
+  arc          = 0mm,
+  coltitle     = black,
+  #1
+}
+
+\newtcolorbox[auto counter,number within=chapter]{functionality}[2][]{%
+  enhanced,
+%  title        = {Functionality \thetcbcounter: {#2}},
+  title        = {Functionality {#2}},
+  attach boxed title to top left={xshift=+3mm,yshift*=-3mm},
+  colback      = yellow!5,
+  colframe     = yellow!35!black,
+  fonttitle    = \bfseries,
+  colbacktitle = yellow!15!white,
+  coltitle     = black,
+  #1
+}

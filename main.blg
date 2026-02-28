@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: chapter/abstract.aux
+A level-1 auxiliary file: chapter/chapter1.aux
+A level-1 auxiliary file: chapter/chapter2.aux
+A level-1 auxiliary file: chapter/chapter3.aux
+A level-1 auxiliary file: chapter/chapter4.aux
+A level-1 auxiliary file: chapter/chapter5.aux
+A level-1 auxiliary file: chapter/conclusion.aux
+The style file: style/gbt7714-2005-numerical.bst
+A level-1 auxiliary file: chapter/Abbreviation.aux
+A level-1 auxiliary file: chapter/publications.aux
+A level-1 auxiliary file: chapter/projects.aux
+A level-1 auxiliary file: chapter/thanks.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 150 items from 100.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: reference/myref.bib
+Warning--I didn't find a database entry for "jyWen"
+You've used 4 entries,
+            5374 wiz_defined-function locations,
+            1082 strings with 9047 characters,
+and the built_in function-call counts, 50822 in all, are:
+= -- 907
+> -- 6037
+< -- 7630
++ -- 2159
+- -- 391
+* -- 234
+:= -- 6997
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 8
+chr.to.int$ -- 1847
+cite$ -- 4
+duplicate$ -- 104
+empty$ -- 265
+format.name$ -- 167
+if$ -- 13143
+int.to.chr$ -- 1
+int.to.str$ -- 5
+missing$ -- 0
+newline$ -- 34
+num.names$ -- 12
+pop$ -- 2617
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 0
+skip$ -- 5490
+stack$ -- 0
+substring$ -- 2403
+swap$ -- 8
+text.length$ -- 110
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 0
+while$ -- 115
+width$ -- 0
+write$ -- 69
+(There was 1 warning)

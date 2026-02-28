@@ -1,0 +1,153 @@
+%% TeX mode: XeLaTeX + bibTeX + XeLaTeX + XeLaTeX
+%% Thesis Template of Guangzhou University
+
+\PassOptionsToPackage{quiet}{fontspec} % 消除字体警告
+\expandafter\def\csname CTEX@spaceChar\endcsname{\hspace{1em}}
+\documentclass[ notypeinfo]{style/GZHUthesis}
+
+% --- 页面设置：上下左右各 25mm ---
+\usepackage{geometry}
+\geometry{a4paper, margin=25mm, footskip=10mm} 
+\setlength{\headwidth}{\textwidth} % 强制页眉宽度等于文本宽度
+\makeatletter \makeatother         % 刷新设置
+
+% ---  标题设置：单倍行距，段前段后 0.5 行 ---
+\ctexset{
+    chapter={
+        format={\bfseries\heiti\zihao{-2}\singlespacing}, 
+        beforeskip={0.5 \baselineskip},
+        afterskip={0.5 \baselineskip},
+        number={\arabic{chapter}}
+    },
+    section={
+        format={\bfseries\heiti\zihao{3}\singlespacing\raggedright},
+        beforeskip={0.5 \baselineskip},
+        afterskip={0.5 \baselineskip}
+    },
+    subsection={
+        format={\bfseries\heiti\zihao{-3}\singlespacing},
+        beforeskip={0.5 \baselineskip},
+        afterskip={0.5 \baselineskip}
+    }
+}
+
+%盲审模式,正常模式请注释掉
+%\blindtrue
+\blindfalse
+
+%默认博士论文, 如需要硕士论文, 注释掉下行
+\phdtrue
+%\phdfalse
+
+%字体设置
+\setsansfont{Arial}
+
+%\citeyearn{XXXX} 自动在\citeyear后面加上“年”
+\hypersetup{hidelinks} %取消链接的颜色
+
+%% 为了方便输入特殊符号, 添加如下新命令:
+\medmuskip=2mu        %水平间距调整: 二元运算符 "+, -, <"
+\thickmuskip=3mu      %水平间距调整: 关系符号调整 "="
+
+
+\graphicspath{{chapter/}{figures/}}  % 设置图形文件的搜索路径
+%\ctexset{section={format+={\flushleft}}}  % 小节标题靠左对齐
+
+% 添加新文件时, 需要在此处加入文件名, 方便控制编译结果
+\ifblind
+\includeonly{  %% 选择盲审时要编译的章节
+    chapter/abstract,
+    chapter/chapter1,
+    chapter/chapter2,
+    chapter/chapter3,
+    chapter/chapter4,
+    chapter/chapter5,
+    chapter/conclusion,
+}
+\else
+\includeonly{  %% 选择要编译的章节, 注释掉的章节不会编译, 平时可注释掉某些章节来提升整体编译速度
+    chapter/abstract,
+    chapter/chapter1,
+    chapter/chapter2,
+    chapter/chapter3,
+    chapter/chapter4,
+    chapter/chapter5,
+    chapter/conclusion,
+    chapter/Abbreviation,
+    chapter/publications,
+    chapter/projects,
+    chapter/thanks
+}
+\fi
+
+
+% 自定义命令
+\include{chapter/defcommands}
+
+% 论文基本信息设置(包含作者, 论文标题等)
+\include{chapter/cover.cfg} 
+
+\pgfplotsset{compat=1.18}
+
+\makeatletter
+\let\c@lofdepth\relax
+\let\c@lotdepth\relax
+\makeatother
+\usepackage{tocloft} % 设置目录中的条目间距
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % 设置目录格式 接着添加：
+\renewcommand\cftchapfont{\songti \zihao{4}} %chapter字号字体
+
+\begin{document}
+    \begin{sloppypar} % 处理行溢出
+        \let\standardtilde=\relax 
+        % 此命令可将其后所有"~"改为不可换行的空格符, 因为ctex宏包重新定义"~"是可换行的空格符
+        \standardtilde
+        \CJKspace     
+        
+        %\makechinesetitle  % 中文封面
+        \makedefendpage    % 中文答辩页
+        
+        
+        \frontmatter  % 前言部分
+        \pagenumbering{Roman} % 页码大写罗马字体
+        \include{chapter/abstract}  % 摘要
+        \begin{spacing}{1.0}
+            \setlength\cftbeforechapskip{6pt}
+            \setlength\cftbeforesecskip{6pt}
+            \setlength\cftbeforesubsecskip{6pt}
+            %\tableofcontents             % 目录
+            %%让目录居中
+            \begin{center}
+                \tableofcontents
+            \end{center}  
+        \end{spacing}
+        %\mainmatter   %% 正文部分
+        % ---  正文部分：1.5 倍行距，段前后无空行 ---
+        \mainmatter
+        \onehalfspacing           % 开启全局 1.5 倍行距
+        \setlength{\parskip}{0pt} % 段前段后无空行
+        
+        
+        % 添加新章节时必须在此处声明
+        \include{chapter/chapter1}
+        \include{chapter/chapter2}
+        \include{chapter/chapter3}
+        \include{chapter/chapter4}
+        \include{chapter/chapter5}
+        \include{chapter/conclusion}
+        \appendix  % 附录
+        \backmatter  %% 附件部分
+        
+        \bibliographystyle{style/gbt7714-2005-numerical}
+        \bibliography{reference/myref}
+        
+        \ifblind
+        \else
+        \include{chapter/Abbreviation}  % 简称列表
+        \include{chapter/publications}     % 发表文章目录
+        \include{chapter/projects} % 参与项目目录
+        \include{chapter/thanks}  % 致谢 
+        \fi
+        
+    \end{sloppypar} % 处理行溢出
+\end{document}
